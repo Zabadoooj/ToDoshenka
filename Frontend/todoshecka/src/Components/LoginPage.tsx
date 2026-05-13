@@ -5,6 +5,7 @@ function LoginPage() {
         <div className="loginPage">
             
             <form>
+                <h1>Вход в аккаунт</h1>
                 <label>
                     Имя пользователя:
                     <input type="text" name="username" />

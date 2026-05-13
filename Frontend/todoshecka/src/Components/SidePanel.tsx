@@ -17,11 +17,11 @@ function SidePanel() {
         <div className="sidePanel">
             
             <div className="upperPart">
-                <button>
-                    <CalendarDays/>
-                    <Link to="/calendar">
-                    </Link>
-                </button>
+                <Link to="/calendar">
+                    <button >
+                        <CalendarDays/>
+                    </button>
+                </Link>
                 
                 
                 <button>
