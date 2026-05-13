@@ -1,0 +1,40 @@
+
+.sidePanel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 50px;
+    height: 100vh;
+    gap: 10px;
+
+    background-color: #D9D9D9;
+}
+.sidePanel .upperPart{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+}
+.sidePanel .bottomPart{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+
+.sidePanel button{
+
+    background-color: #ffff;
+    cursor: pointer;
+    
+    padding: 13px;
+    border: none;
+    margin-left: 8px;
+
+    border-radius: 12px 0 0 12px;
+}
+
+.sidePanel button:hover{
+    background-color: #d2fdd2;
+}
