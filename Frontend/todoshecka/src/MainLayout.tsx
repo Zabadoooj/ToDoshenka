@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import SidePanel from "./Components/SidePanel";
 
 function MainLayout() {
+
     return(
         <main style={{display: 'flex'}}>
             <SidePanel />
@@ -12,5 +13,6 @@ function MainLayout() {
         </main>
     )
 }
+
 
 export default MainLayout

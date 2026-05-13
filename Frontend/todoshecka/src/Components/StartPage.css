@@ -1,0 +1,47 @@
+.startPage{
+    display: flex;
+
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.startPage .infoBlock{
+    background-color: #dfe7de;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 30px;
+
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 50px;
+
+    padding: 100px;
+
+
+}
+
+.infoBlock .buttons{
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+}
+
+.buttons button{
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+
+    border-radius: 10px;
+}
+.buttons .startButton{
+    background-color: #ABE588;
+}
+.buttons .sourceButton{
+    background-color: white;
+}

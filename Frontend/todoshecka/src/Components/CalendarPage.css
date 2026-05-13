@@ -1,0 +1,54 @@
+
+.centerBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 150px;
+    width: 100%;
+    background-color: #526E42;
+}
+
+.switchMonth{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    height: 70px;
+
+    width: 530px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+.switchMonth button{
+    cursor: pointer;
+
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 10px;
+
+    height: 50px;
+    width: 50px;
+}
+
+
+.currentDate{
+    font-size: 40px;
+    padding: 20px;
+    text-align: left;
+
+}
+
+.weekDays{
+
+    width: 90vw;
+
+    display: flex;
+    justify-content: space-around;
+
+    font-size: 20px;
+}
+
+.Сб, .Вс{
+    color: red;
+}
