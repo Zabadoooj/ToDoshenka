@@ -5,9 +5,10 @@ import {
   NotebookPen,
   CalendarCheck,
   UserRound,
-} from "lucide-react";
+} from "lucide-react"
 
-import { Link } from 'react-router-dom';
+
+import { Link } from 'react-router-dom'
 
 
 
@@ -38,9 +39,11 @@ function SidePanel() {
             </div>
 
             <div className="bottomPart">
-                <button>
-                    <UserRound/>
-                </button>
+                <Link to="/profile">
+                    <button>
+                        <UserRound/>
+                    </button>
+                </Link>
             </div>
 
         </div>

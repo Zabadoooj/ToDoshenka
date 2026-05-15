@@ -1,5 +1,10 @@
 import './CalendarPage.css'
 
+import {
+    ArrowLeft,
+    ArrowRight
+} from 'lucide-react'
+
 const WEEK_DAYS = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 const MONTHS_RU = [
     'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
@@ -31,14 +36,19 @@ function CalendarPage() {
         <div className="calendarPage">
 
             <div className="centerBox">
+                {/* <div className="pattern" /> */}
                 <div className="switchMonth">
-                    <button>{"<"}</button>
+                    <button>
+                        <ArrowLeft/>
+                    </button>
 
                     <div className="currentDate">
                         {MONTHS_RU[currentMonth]} {currentYear}
                     </div>
 
-                    <button>{">"}</button>
+                    <button>
+                        <ArrowRight/>
+                    </button>
                 </div>
             </div>
 
@@ -48,6 +58,28 @@ function CalendarPage() {
                     <div className={day} key={day}>{day}</div>  
                 ))}
             </div>
+
+
+            <div className="daysList">
+                {daysArray.map((day) => (
+                    <div className="daySlot">
+                        <h1>
+                            {day}
+                        </h1>
+
+                        <div className="stats">
+                            <div className="notesCount">11</div>
+                            <div className="ToDoCount">25</div>
+                            <div className="eventsCount">2</div>
+                        </div>
+
+                        <div className="eventsList">
+                            <div className="event">#Текст</div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
 
 
         </div>
