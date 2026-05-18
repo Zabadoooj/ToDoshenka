@@ -9,9 +9,15 @@
 2. Ссылка на use-case диаграмму:
 
         ./Скрины/"use-case diagram.png"
+![Use-case диаграмма](./Скрины/use-case%20diagram.png)
 3. Ссылка на макет figma:
 
         https://www.figma.com/design/L7o2ZoIbFg4Q0j37wN73oa/MegaTodo?node-id=0-1&p=f&t=xWkaKFvpX22dWVzD-0
     локальная ссылка:
     
         ./Скрины/Макет
+![МАКЕТ Основная страница](./Скрины/Макет/Календарь.png)
+**___Макет___**
+
+![ВЁРСТКА Основная страница](./Скрины/Скрины%20вестки/Pre-result%20layout.png)
+**___Вёрстка___**
