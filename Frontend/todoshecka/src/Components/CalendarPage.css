@@ -14,7 +14,7 @@
     padding-bottom: 20px;
     margin-bottom: -20px;
 
-    height: 180px;
+    height: 160px;
     width: 100%;
     background-color: #526E42;
     background: linear-gradient(#526E42, #48613ab5, #7ca565, transparent);
@@ -22,7 +22,7 @@
 .pattern{
     position: fixed;
     width: calc(100vw - 50px);
-    height: 180px;
+    height: 160px;
     z-index: 0;
 
 
@@ -156,9 +156,10 @@
     font-size: 15px;
     font-weight: 550;
 
+    max-width: 50px;
 
     display: grid;
-    gap: 5px;
+    /* gap: 5px; */
 
     grid-template-columns: repeat(2, 1fr); 
     color: #048304;
@@ -178,7 +179,7 @@
     background-color: #048304;
     padding: 4px;
     border-radius: 100%;
-    margin-left: -5px;
+    margin-left: -6px;
 
     height: 20px;
     width: 20px;

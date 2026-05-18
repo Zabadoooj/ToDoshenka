@@ -18,6 +18,9 @@ const MONTHS_RU = [
 
 function DayItem({day, isNonActive}) {
 
+    const eventsArr = ["Событие" + Math.round(Math.random() * 10), "Событииииииииие2", "Событиеееее3"]
+    // const eventsArr = []
+
     return(
         <div className={isNonActive ? "daySlot nonActiveDay" : "daySlot"}>
             <div className="mainInfo">
@@ -25,17 +28,16 @@ function DayItem({day, isNonActive}) {
                     {day}
                 </h1>
 
+                        {/* <div className="event">{eventItem}</div> */}
                 <div className="eventsList">
-                    <div className="event">Событие1</div>
-                    <div className="event">Событие2</div>
-                    <div className="event">Событие3</div>
+                    <div className="event">{eventsArr[0]}</div>
                 </div>
             </div>
 
             <div className="stats">
-                <div className="notesCount">11</div>
-                <div className="ToDoCount">25</div>
-                <div className="eventsCount">2</div>
+                <div className="notesCount">{Math.round(Math.random() * 100)}</div>
+                <div className="ToDoCount">{Math.round(Math.random() * 10)}</div>
+                <div className="eventsCount">{Math.round(Math.random() * 10)}</div>
             </div>
         </div>
     )
