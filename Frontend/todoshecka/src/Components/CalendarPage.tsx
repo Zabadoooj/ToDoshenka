@@ -16,10 +16,10 @@ const MONTHS_RU = [
 
 
 
-function DayItem({day}) {
+function DayItem({day, isNonActive}) {
 
     return(
-        <div className="daySlot">
+        <div className={isNonActive ? "daySlot nonActiveDay" : "daySlot"}>
             <div className="mainInfo">
                 <h1>
                     {day}
@@ -48,17 +48,25 @@ function CalendarPage() {
     const today = new Date()
     const [currentYear, setYear] = useState(today.getFullYear())
     const [currentMonth, setMonth] = useState(today.getMonth())
-    const currentDay = today.getDay()
+    const currentDay = today.getDate()
 
-    let firstDayOfMonth = new Date(currentYear, currentMonth, 1)
-    let totalDaysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-    let firstDayOfWeek = firstDayOfMonth.getDay();
+    
+    const totalDaysInPreviousMonth = new Date(currentYear, currentMonth + 2, 0).getDate();
+    
+
+    const firstDayOfMonth = new Date(currentYear, currentMonth, 1)
+    const totalDaysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const firstDayOfWeek = firstDayOfMonth.getDay();
 
     let emptySlotsBefore = firstDayOfWeek === 0 ? 6 : firstDayOfWeek - 1;
+    console.log(emptySlotsBefore);
+    
+    
 
-    let emptySlots = Array(emptySlotsBefore).fill(null);
+    let emptySlots = new Array(emptySlotsBefore).fill(0).map((_, i) => totalDaysInPreviousMonth - i).reverse();
+    console.log(emptySlots);
+    
     let daysArray = Array.from({ length: totalDaysInMonth }, (_, i) => i + 1);
-
 
     const updateMonth = (month: any) => {
 
@@ -118,17 +126,13 @@ function CalendarPage() {
                 ))}
             </div>
 
-
-            {/* <div className="emptySlots">
-                {emptySlots.map((emptySlot) => (
-                    <div className="emptyDay">{emptySlot}</div>  
-                ))}
-            </div> */}
-
             <div className="daysList">
-                {/* <DayItem day="1"/> */}
+                {emptySlots.map((emptySlot) => (
+                    <DayItem isNonActive={true} day={emptySlot}/>
+                ))}
+
                 {daysArray.map((day) => (
-                    <DayItem day={day}/>
+                    <DayItem isNonActive={false} day={day}/>
                 ))}
             </div>
             
