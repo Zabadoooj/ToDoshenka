@@ -18,8 +18,8 @@ const MONTHS_RU = [
 
 function DayItem({day, isNonActive}) {
 
-    const eventsArr = ["Событие" + Math.round(Math.random() * 10), "Событииииииииие2", "Событиеееее3"]
-    // const eventsArr = []
+    const [eventsArr, setEventsArr] = useState(["Событие" + Math.round(Math.random() * 10), "Событииииииииие2", "Событиеееее3"])
+    // const [eventsArr, setEventsArr] = useState([])
 
     return(
         <div className={isNonActive ? "daySlot nonActiveDay" : "daySlot"}>
@@ -30,14 +30,16 @@ function DayItem({day, isNonActive}) {
 
                         {/* <div className="event">{eventItem}</div> */}
                 <div className="eventsList">
-                    <div className="event">{eventsArr[0]}</div>
+                    <div className="event">{
+                        eventsArr.length > 1 ? eventsArr[0] + " ..." : eventsArr[0]
+                        }</div>
                 </div>
             </div>
 
             <div className="stats">
                 <div className="notesCount">{Math.round(Math.random() * 100)}</div>
                 <div className="ToDoCount">{Math.round(Math.random() * 10)}</div>
-                <div className="eventsCount">{Math.round(Math.random() * 10)}</div>
+                <div className="eventsCount">{eventsArr.length}</div>
             </div>
         </div>
     )
@@ -54,21 +56,20 @@ function CalendarPage() {
 
     
     const totalDaysInPreviousMonth = new Date(currentYear, currentMonth + 2, 0).getDate();
-    
+
 
     const firstDayOfMonth = new Date(currentYear, currentMonth, 1)
     const totalDaysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     const firstDayOfWeek = firstDayOfMonth.getDay();
 
-    let emptySlotsBefore = firstDayOfWeek === 0 ? 6 : firstDayOfWeek - 1;
-    console.log(emptySlotsBefore);
-    
-    
 
-    let emptySlots = new Array(emptySlotsBefore).fill(0).map((_, i) => totalDaysInPreviousMonth - i).reverse();
-    console.log(emptySlots);
-    
-    let daysArray = Array.from({ length: totalDaysInMonth }, (_, i) => i + 1);
+    const emptySlotsBefore = firstDayOfWeek === 0 ? 6 : firstDayOfWeek - 1;
+
+    const emptySlots = new Array(emptySlotsBefore).fill(0).map((_, i) => totalDaysInPreviousMonth - i).reverse();
+    const emptyNextMonth = [1,2,3,4,5,6,7]    
+
+
+    const daysArray = Array.from({ length: totalDaysInMonth }, (_, i) => i + 1);
 
     const updateMonth = (month: any) => {
 
@@ -136,6 +137,10 @@ function CalendarPage() {
                 {daysArray.map((day) => (
                     <DayItem isNonActive={false} day={day}/>
                 ))}
+
+                {/* {emptyNextMonth.map((day) => (
+                    <DayItem isNonActive={true} day={day}/>
+                ))} */}
             </div>
             
 

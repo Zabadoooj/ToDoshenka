@@ -82,6 +82,7 @@
     font-size: 20px;
 }
 .Пн, .Вт, .Ср, .Чт, .Пт, .Сб, .Вс{
+    z-index: 2;
 
     background-color: #5b775d;
     background-color: #526E42;
@@ -106,8 +107,10 @@
     grid-template-columns: repeat(7, 1fr); 
     gap: 18px;
     
-    max-height: 600px;
+    /* max-height: 600px; */
+    max-height: 800px;
     
+    z-index: 2;
 
     margin-top: 20px;
     margin-left: 16px;
@@ -115,6 +118,8 @@
 }
 
 .daySlot{
+    z-index: 2;
+    
     background-color: #EFFFF0;
     border-radius: 12px;
     cursor: pointer;
@@ -156,12 +161,9 @@
     font-size: 15px;
     font-weight: 550;
 
+    min-height: 30px;
     max-width: 50px;
 
-    display: grid;
-    /* gap: 5px; */
-
-    grid-template-columns: repeat(2, 1fr); 
     color: #048304;
 }
 
@@ -170,7 +172,7 @@
 
     margin-right: 15px;
     margin-left: -20px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .notesCount, .ToDoCount, .eventsCount{
     font-weight: bold;
