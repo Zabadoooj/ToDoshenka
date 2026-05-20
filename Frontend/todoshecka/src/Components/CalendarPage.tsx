@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import './CalendarPage.css'
+import './Workspace/EventsPanel'
 
 import {
     ArrowLeft,
     ArrowRight,
     Plus
 } from 'lucide-react'
+import EventsPanel from './Workspace/EventsPanel';
 
 const WEEK_DAYS = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 const MONTHS_RU = [
@@ -66,7 +68,7 @@ function CalendarPage() {
     const emptySlotsBefore = firstDayOfWeek === 0 ? 6 : firstDayOfWeek - 1;
 
     const emptySlots = new Array(emptySlotsBefore).fill(0).map((_, i) => totalDaysInPreviousMonth - i).reverse();
-    const emptyNextMonth = [1,2,3,4,5,6,7]    
+    const emptyNextMonth = [1,2,3,4,5,6,7]
 
 
     const daysArray = Array.from({ length: totalDaysInMonth }, (_, i) => i + 1);
@@ -104,6 +106,8 @@ function CalendarPage() {
 
     return(
         <div className="calendarPage">
+
+            <EventsPanel />
 
             <div className="centerBox">
                 <div className="pattern" />
